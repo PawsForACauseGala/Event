@@ -96,8 +96,146 @@
       </div>
     </section>
 
-    <!-- Additional sections (About, Details, Tickets, RSVP, Sponsor, Contact) were included in previous code -->
-    <!-- For brevity, you can paste the full code I provided before into this file -->
+    <section id="about" class="wrap">
+      <div class="grid two">
+        <div class="card" style="padding:22px;">
+          <h2>About the Gala</h2>
+          <p>Join us for an elegant evening in black and white—cocktails, dinner, music, and a silent auction—supporting lifesaving rescue, veterinary care, and adoptions for cats and dogs across St. Martin / Sint Maarten.</p>
+        </div>
+        <div class="card" style="padding:22px;">
+          <h2>The Cause</h2>
+          <p>Island Cat Rescue and SXM PAWS work together on spay/neuter, vaccinations, medical treatment, and community education. Your generosity keeps animals healthy and helps more pets find loving homes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" class="wrap">
+      <h2>Event Details</h2>
+      <div class="details">
+        <div class="detail"><div><strong>Attire</strong><span> Black &amp; White Cocktail</span></div></div>
+        <div class="detail"><div><strong>Program Highlights</strong><span>Welcome reception, dinner, live music, rescue spotlights, raffle &amp; silent auction.</span></div></div>
+        <div class="detail"><div><strong>Parking &amp; Arrival</strong><span>Valet available at Kalatua Beach Restaurant. Please arrive by 5:45 p.m.</span></div></div>
+      </div>
+    </section>
+
+    <!-- ========================= TICKETS & PAYMENT + RSVP ========================= -->
+    <section id="tickets" class="wrap">
+      <div class="grid two">
+        <div class="card" style="padding:22px;">
+          <h2>Tickets &amp; Payment</h2>
+          <p>General Admission – <strong>$200 per person</strong>. Limited availability.</p>
+
+          <div class="cta-row" style="margin:14px 0 6px;">
+            <!-- Replace links with your real PayPal/Venmo details -->
+            <a class="btn primary" href="https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID" target="_blank" rel="noreferrer">Pay with PayPal</a>
+            <a class="btn" href="https://venmo.com/u/YOUR_VENMO_HANDLE" target="_blank" rel="noreferrer">Pay with Venmo</a>
+          </div>
+
+          <small class="muted">
+            Tip: You can also use <code>https://paypal.me/YourHandle/200</code> to prefill $200.
+            For Venmo on mobile: <code>venmo://pay?recipients=YOUR_VENMO_HANDLE&amount=200&note=Paws%20for%20a%20Cause%20Ticket</code>.
+          </small>
+
+          <p style="margin-top:10px;">After payment, please submit the RSVP form so we can record entrée selections and seating preferences.</p>
+        </div>
+
+        <div class="card" style="padding:22px;">
+          <h2>Questions?</h2>
+          <p>
+            Email <a href="mailto:PawsForACauseGala@gmail.com">PawsForACauseGala@gmail.com</a><br>
+            WhatsApp: <a href="https://wa.me/12034947915" target="_blank">+1 (203) 494-7915</a><br>
+            Local: <a href="tel:+17215230090">+721 523-0090</a>
+          </p>
+          <p>Prefer to donate instead? <a href="#sponsor">See sponsor options</a>.</p>
+        </div>
+      </div>
+
+      <!-- RSVP FORM (Netlify Forms) -->
+      <div class="card" style="padding:22px; margin-top:18px;">
+        <h2 id="rsvp">RSVP &amp; Entrée Selections</h2>
+        <p>Please complete this form for meal selections and seating. You can add additional guests as needed.</p>
+
+        <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="rsvp">
+          <p hidden>
+            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+          </p>
+
+          <div class="grid two">
+            <p>
+              <label for="contact-name"><strong>Your Full Name*</strong></label><br>
+              <input id="contact-name" name="contact_name" type="text" required />
+            </p>
+            <p>
+              <label for="email"><strong>Email*</strong></label><br>
+              <input id="email" name="email" type="email" required />
+            </p>
+          </div>
+
+          <div class="grid two">
+            <p>
+              <label for="phone"><strong>Phone</strong> (optional)</label><br>
+              <input id="phone" name="phone" type="tel" />
+            </p>
+            <p>
+              <label for="qty"><strong>Number of Tickets*</strong></label><br>
+              <input id="qty" name="ticket_quantity" type="number" min="1" value="1" required />
+            </p>
+          </div>
+
+          <hr style="border-color:#ddd; margin:16px 0;">
+          <h3 style="margin:0 0 8px;">Attendees</h3>
+          <p style="margin-top:0;color:#666;">Add each attendee and select their entrée. Note any allergies per person.</p>
+
+          <div id="guests"></div>
+          <p><button type="button" class="btn" id="addGuest">+ Add Guest</button></p>
+
+          <p>
+            <label for="seating"><strong>Seating Group Names</strong> (optional)</label><br>
+            <textarea id="seating" name="seating_group" rows="3" placeholder="List people you wish to sit with (if not added as guests above)."></textarea>
+          </p>
+
+          <p>
+            <button class="btn primary" type="submit">Submit RSVP</button>
+            <span style="font-size:13px;color:#666;margin-left:10px;">We’ll email a confirmation once received.</span>
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================= SPONSORSHIP ========================= -->
+    <section id="sponsor" class="wrap">
+      <div class="card" style="padding:22px;">
+        <h2>Become a Sponsor</h2>
+        <p>Your support makes an immediate impact. Choose a sponsorship level below or contact us for a custom package.</p>
+        <div class="grid two">
+          <div class="detail"><div><strong>Platinum Partner</strong><span> $5,000 – Table for 10, logo placement, on-stage thanks.</span></div></div>
+          <div class="detail"><div><strong>Gold Advocate</strong><span> $2,500 – 6 tickets, logo on website &amp; signage.</span></div></div>
+          <div class="detail"><div><strong>Silver Friend</strong><span> $1,000 – 4 tickets, name on website.</span></div></div>
+          <div class="detail"><div><strong>Community Supporter</strong><span> $500 – 2 tickets, name listed.</span></div></div>
+        </div>
+        <p style="margin-top:10px;"><a class="btn" href="#" aria-label="Sponsor the event">Sponsor This Event</a></p>
+      </div>
+    </section>
+
+    <!-- ========================= CONTACT / QR ========================= -->
+    <section id="contact" class="wrap">
+      <div class="grid two">
+        <div class="card" style="padding:22px;">
+          <h2>Contact</h2>
+          <p>
+            Island Cat Rescue • Adoption Center – Maho<br />
+            Email: <a href="mailto:PawsForACauseGala@gmail.com">PawsForACauseGala@gmail.com</a><br>
+            WhatsApp: <a href="https://wa.me/12034947915" target="_blank">+1 (203) 494-7915</a> · Local: <a href="tel:+17215230090">+721 523-0090</a>
+          </p>
+        </div>
+        <div class="card" style="padding:22px;">
+          <h2>QR / Map</h2>
+          <p>Drop in a QR code image here for tickets or donations. Replace the image source below.</p>
+          <img src="qr-placeholder.png" alt="QR code for tickets or donations" />
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer wrap">
@@ -105,7 +243,53 @@
   </footer>
 
   <script>
+    // keep the footer year current
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- Guest repeater for RSVP form ---
+    const guests = document.getElementById('guests');
+    const addBtn = document.getElementById('addGuest');
+
+    function guestRow(i){
+      const wrap = document.createElement('div');
+      wrap.className = 'detail';
+      wrap.style.alignItems = 'center';
+      wrap.innerHTML = `
+        <div style="width:100%">
+          <div class="grid two">
+            <p style="margin:0">
+              <label><strong>Guest Name*</strong><br>
+                <input name="guest_${i}_name" type="text" required />
+              </label>
+            </p>
+            <p style="margin:0">
+              <label><strong>Entrée*</strong><br>
+                <select name="guest_${i}_entree" required>
+                  <option value="">Select…</option>
+                  <option>Meat</option>
+                  <option>Fish</option>
+                  <option>Vegetarian</option>
+                </select>
+              </label>
+            </p>
+          </div>
+          <p style="margin:8px 0 0 0">
+            <label><strong>Food Allergies</strong> (optional)<br>
+              <input name="guest_${i}_allergies" type="text" placeholder="e.g., shellfish, nuts" />
+            </label>
+          </p>
+        </div>
+        <button type="button" class="btn" aria-label="Remove guest">Remove</button>
+      `;
+      wrap.querySelector('button').addEventListener('click', ()=> wrap.remove());
+      return wrap;
+    }
+
+    let counter = 0;
+    function addGuest(){ guests.appendChild(guestRow(++counter)); }
+    if(addBtn){ addBtn.addEventListener('click', addGuest); }
+    // start with one attendee (the purchaser)
+    addGuest();
   </script>
 </body>
 </html>
