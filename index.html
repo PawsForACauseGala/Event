@@ -151,51 +151,55 @@
         <h2 id="rsvp">RSVP &amp; Entrée Selections</h2>
         <p>Please complete this form for meal selections and seating. You can add additional guests as needed.</p>
 
-        <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="rsvp">
-          <p hidden>
-            <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-          </p>
+        <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+  <!-- Required for some JS frameworks; safe to keep in plain HTML too -->
+  <input type="hidden" name="form-name" value="rsvp" />
+  <!-- Honeypot (spam trap) -->
+  <p class="hidden" style="display:none;">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
 
-          <div class="grid two">
-            <p>
-              <label for="contact-name"><strong>Your Full Name*</strong></label><br>
-              <input id="contact-name" name="contact_name" type="text" required />
-            </p>
-            <p>
-              <label for="email"><strong>Email*</strong></label><br>
-              <input id="email" name="email" type="email" required />
-            </p>
-          </div>
+  <div>
+    <label>Full Name*</label>
+    <input type="text" name="name" required />
+  </div>
 
-          <div class="grid two">
-            <p>
-              <label for="phone"><strong>Phone</strong> (optional)</label><br>
-              <input id="phone" name="phone" type="tel" />
-            </p>
-            <p>
-              <label for="qty"><strong>Number of Tickets*</strong></label><br>
-              <input id="qty" name="ticket_quantity" type="number" min="1" value="1" required />
-            </p>
-          </div>
+  <div>
+    <label>Email*</label>
+    <input type="email" name="email" required />
+  </div>
 
-          <hr style="border-color:#ddd; margin:16px 0;">
-          <h3 style="margin:0 0 8px;">Attendees</h3>
-          <p style="margin-top:0;color:#666;">Add each attendee and select their entrée. Note any allergies per person.</p>
+  <div>
+    <label>Phone (WhatsApp ok)</label>
+    <input type="tel" name="phone" />
+  </div>
 
-          <div id="guests"></div>
-          <p><button type="button" class="btn" id="addGuest">+ Add Guest</button></p>
+  <div>
+    <label>Attendance*</label>
+    <select name="attendance" required>
+      <option value="">Select…</option>
+      <option>Yes, I’m attending</option>
+      <option>No, I can’t attend</option>
+    </select>
+  </div>
 
-          <p>
-            <label for="seating"><strong>Seating Group Names</strong> (optional)</label><br>
-            <textarea id="seating" name="seating_group" rows="3" placeholder="List people you wish to sit with (if not added as guests above)."></textarea>
-          </p>
+  <div>
+    <label>Meal Preference</label>
+    <select name="meal">
+      <option>Chef’s selection</option>
+      <option>Vegetarian</option>
+      <option>Vegan</option>
+      <option>Gluten-free</option>
+    </select>
+  </div>
 
-          <p>
-            <button class="btn primary" type="submit" value="send email" action=mailto:pawsforacausegala@gmail.com">Submit RSVP</button>
-            <span style="font-size:13px;color:#666;margin-left:10px;">We’ll email a confirmation once received.</span>
-          </p>
-        </form>
+  <div>
+    <label>Notes (allergies, seating, etc.)</label>
+    <textarea name="notes" rows="4"></textarea>
+  </div>
+
+  <button class="btn primary" type="submit">Submit RSVP</button>
+</form>
       </div>
     </section>
 
